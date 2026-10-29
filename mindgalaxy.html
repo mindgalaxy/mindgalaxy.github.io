@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<title>MindGalaxy — Learn beyond the textbook</title>
+<style>
+:root{--bg:#0b1020;--panel:#111827;--panel2:#151f32;--line:#273248;--text:#f4f7ff;--muted:#9aa8bf;--violet:#9a8cff;--cyan:#5dd6e8;--green:#7be0b0;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#1b2041 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.app{min-height:100vh}.topbar{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;gap:20px;position:sticky;top:0;background:#0b1020ed;backdrop-filter:blur(12px);z-index:10}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.5px;font-size:20px}.logo{width:38px;height:38px;border-radius:12px;background:#1c2440;border:1px solid #45416e;display:grid;place-items:center;color:var(--cyan);font-size:20px}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:600}.top-actions{display:flex;align-items:center;gap:10px}.search{width:min(300px,28vw);background:#10182a;border:1px solid var(--line);color:var(--text);padding:11px 14px;border-radius:11px;outline:none}.search:focus{border-color:var(--violet)}.pill{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:10px 14px;border-radius:11px}.pill.primary{background:var(--violet);border-color:var(--violet);color:#0c1020;font-weight:800}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1500px;margin:auto}.sidebar{padding:28px 18px;border-right:1px solid var(--line);min-height:calc(100vh - 76px)}.nav-label{font-size:10px;letter-spacing:1.8px;color:#71809a;font-weight:800;padding:0 12px;margin:18px 0 9px}.nav-item{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:12px;border:0;background:transparent;color:var(--muted);border-radius:11px;margin:3px 0}.nav-item:hover,.nav-item.active{background:#1b2340;color:var(--text)}.nav-item.active{box-shadow:inset 3px 0 var(--violet)}.nav-icon{width:22px;text-align:center;color:var(--cyan)}.side-note{margin-top:32px;padding:16px;border:1px solid var(--line);background:#111a2b;border-radius:15px}.side-note p{font-size:12px;color:var(--muted);margin:6px 0 12px}.main{padding:34px clamp(18px,4vw,56px) 70px;min-width:0}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(230px,.85fr);gap:20px;border:1px solid #303957;background:linear-gradient(120deg,#141b31,#101729 68%,#151a36);border-radius:24px;padding:clamp(24px,4vw,44px);min-height:280px}.hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid #7c78c64d;right:5%;top:4%;box-shadow:0 0 0 28px #7c78c611,0 0 0 60px #7c78c60b;pointer-events:none}.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-1.8px;margin:12px 0}.hero h1 span{color:var(--violet)}.hero p{color:#aebbd0;max-width:520px;margin:0 0 22px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.hero-art{position:relative;min-height:170px;display:grid;place-items:center;z-index:1}.orbit{width:190px;height:190px;border:1px solid #8279d68c;border-radius:50%;position:absolute;transform:rotate(-25deg) scaleY(.42)}.orbit.two{width:230px;height:230px;transform:rotate(45deg) scaleY(.42);border-color:#5dd6e86b}.planet{width:95px;height:95px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#b9b2ff,#7a6be3 38%,#343c76 75%);box-shadow:0 0 45px #8378ff48;z-index:1}.star{position:absolute;color:var(--cyan)}.star.s1{top:15%;left:18%}.star.s2{right:10%;bottom:20%;font-size:22px}.star.s3{right:18%;top:10%;font-size:11px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:34px 0 16px}.section-head h2{font-size:21px;letter-spacing:-.5px;margin:4px 0 0}.section-head p{color:var(--muted);font-size:13px;margin:0}.text-btn{border:0;background:none;color:var(--cyan);font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}.stat{padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#111827a8}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:25px;margin:8px 0 2px;letter-spacing:-.7px}.stat small{color:var(--green);font-size:11px}.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.subject{padding:18px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#151e31,#101726);transition:transform .18s,border-color .18s;cursor:pointer;min-width:0}.subject:hover{transform:translateY(-3px);border-color:#6e6aa6}.subject-head{display:flex;justify-content:space-between;align-items:center}.subject-icon{height:42px;width:42px;border-radius:13px;display:grid;place-items:center;background:#252a4b;font-size:21px}.subject h3{margin:16px 0 4px;font-size:16px}.subject p{color:var(--muted);font-size:12px;margin:0 0 15px}.progress-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:7px}.progress{height:5px;background:#2a3448;border-radius:10px;overflow:hidden}.progress span{height:100%;display:block;background:var(--violet);border-radius:10px}.subject:nth-child(2) .progress span{background:var(--cyan)}.subject:nth-child(3) .progress span{background:#e8b56d}.subject:nth-child(4) .progress span{background:#7be0b0}.subject:nth-child(5) .progress span{background:#ed91c6}.subject:nth-child(6) .progress span{background:#a9b5ff}.lower-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:30px}.panel{border:1px solid var(--line);border-radius:17px;background:#111827a8;padding:20px;min-width:0}.panel h3{margin:0 0 4px;font-size:16px}.panel-sub{font-size:12px;color:var(--muted);margin:0 0 17px}.chapter-list{display:grid;gap:10px}.chapter{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;background:#172033;border:1px solid #263148}.chapter-num{width:34px;height:34px;display:grid;place-items:center;background:#252a4b;color:var(--cyan);border-radius:10px;font-weight:800;font-size:12px;flex-shrink:0}.chapter-info{min-width:0;flex:1}.chapter-info strong{display:block;font-size:13px}.chapter-info small{color:var(--muted);font-size:11px}.chapter button{border:1px solid #38445c;background:#1a2540;color:var(--text);border-radius:9px;padding:8px 10px;font-size:11px}.notice{border-left:3px solid var(--cyan);padding:11px 12px;background:#172033;border-radius:0 10px 10px 0;margin-top:10px}.notice strong{font-size:12px}.notice p{font-size:11px;color:var(--muted);margin:4px 0 0}.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.plan{border:1px solid var(--line);background:#111827;border-radius:17px;padding:20px}.plan.featured{border-color:#8178cf;background:linear-gradient(150deg,#1b2040,#111827)}.plan h3{margin:0 0 8px}.price{font-size:30px;font-weight:800;letter-spacing:-1px}.price small{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0}.plan ul{padding-left:18px;color:var(--muted);font-size:12px;line-height:2}.plan button{width:100%;margin-top:8px}.view{display:none}.view.active{display:block}.page-title{font-size:30px;letter-spacing:-1px;margin:5px 0}.page-intro{color:var(--muted);margin:0 0 24px}.filter-row{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.filter-row select{background:#111827;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:10px}.empty-state{padding:28px;text-align:center;color:var(--muted);border:1px dashed #39445c;border-radius:15px}.modal-backdrop{position:fixed;inset:0;background:#050813c9;z-index:30;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.open{display:flex}.modal{width:min(650px,100%);max-height:85vh;overflow:auto;border:1px solid #39445c;background:#101827;border-radius:20px;padding:24px;box-shadow:0 25px 80px #0008}.modal-top{display:flex;justify-content:space-between;gap:15px}.modal h2{margin:5px 0 10px}.close{border:1px solid var(--line);background:#1b2437;color:var(--text);border-radius:10px;width:38px;height:38px}.modal-content{color:#c3cde0;font-size:14px}.modal-content li{margin:8px 0}.notice-box{background:#28243d;border:1px solid #4e4774;border-radius:12px;padding:12px;font-size:12px;color:#d8d3ff;margin-top:15px}.footer{text-align:center;color:#71809a;font-size:11px;margin-top:40px}.mobile-menu{display:none}
+@media(max-width:1050px){.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr .6fr}.hero-art{opacity:.75}.layout{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding:24px 12px}}
+@media(max-width:760px){.topbar{height:65px;padding:0 16px}.search{width:38vw}.top-actions .pill:not(.primary){display:none}.layout{display:block}.sidebar{display:none;position:fixed;z-index:20;top:65px;left:0;bottom:0;width:250px;background:#0b1020;border-right:1px solid var(--line);min-height:0;overflow:auto}.sidebar.open{display:block}.mobile-menu{display:inline-flex}.main{padding:24px 16px 55px}.hero{grid-template-columns:1fr;padding:25px;min-height:auto}.hero-art{position:absolute;right:-35px;top:60px;opacity:.2}.hero-copy{position:relative;z-index:2}.stats{gap:9px}.stat{padding:13px}.stat strong{font-size:20px}.stat-top{font-size:10px}.subject-grid{gap:10px}.subject{padding:14px}.subject h3{font-size:14px}.lower-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.section-head{align-items:start}.section-head h2{font-size:19px}}
+@media(max-width:420px){.brand{font-size:17px}.brand small{font-size:8px}.logo{width:34px;height:34px}.search{width:32vw;padding:10px;font-size:12px}.top-actions{gap:6px}.top-actions .primary{padding:9px}.subject-grid{grid-template-columns:1fr 1fr}.subject-icon{width:35px;height:35px}.stats{grid-template-columns:1fr}.stat{display:flex;align-items:center;justify-content:space-between}.stat strong{margin:0}.stat small{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <button class="pill mobile-menu" id="menuToggle" aria-label="Open menu">☰</button>
+  <a class="brand" href="#" data-view="dashboard"><span class="logo">✦</span><span>MindGalaxy<small>LEARN BEYOND LIMITS</small></span></a>
+  <div class="top-actions">
+    <input class="search" id="globalSearch" placeholder="Search subjects or chapters…" aria-label="Search subjects or chapters">
+    <button class="pill" id="themeButton" title="Switch theme">◐</button>
+    <button class="pill primary" data-view="plans">Go Premium ↗</button>
+  </div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="nav-label">WORKSPACE</div>
+  <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span> Dashboard</button>
+  <button class="nav-item" data-view="explorer"><span class="nav-icon">◎</span> Galaxy Explorer</button>
+  <button class="nav-item" data-view="lessons"><span class="nav-icon">▤</span> Lessons & Notes</button>
+  <button class="nav-item" data-view="pyq"><span class="nav-icon">◷</span> Board PYQs</button>
+  <button class="nav-item" data-view="aitutor"><span class="nav-icon">✧</span> AI Study Buddy</button>
+  <div class="nav-label">YOUR ACCOUNT</div>
+  <button class="nav-item" data-view="progress"><span class="nav-icon">↗</span> My Progress</button>
+  <button class="nav-item" data-view="plans"><span class="nav-icon">◇</span> Premium Plans</button>
+  <div class="side-note"><span class="eyebrow">YOUR NEXT MISSION</span><strong style="display:block;margin-top:7px">15 minutes of focus</strong><p>One small study session is better than waiting for the perfect moment.</p><button class="pill" style="width:100%" data-view="lessons">Start learning →</button></div>
+  <div style="padding:16px 12px;color:#71809a;font-size:11px">MindGalaxy • Student workspace</div>
+</aside>
+<main class="main">
+<section class="view active" id="view-dashboard">
+  <div class="hero">
+    <div class="hero-copy"><div class="eyebrow">YOUR LEARNING UNIVERSE</div><h1>Big ideas.<br><span>One galaxy.</span></h1><p>Explore school subjects, master one chapter at a time, and turn your study goals into progress you can actually see.</p><div class="hero-actions"><button class="pill primary" data-view="explorer">Explore subjects ↗</button><button class="pill" data-view="pyq">Practice board questions</button></div></div>
+    <div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="orbit two"></div><div class="planet"></div><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✦</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div><div class="stat-top">CHAPTERS COMPLETED</div><strong id="completedStat">0</strong><small>Keep building your streak</small></div><span>▤</span></div>
+    <div class="stat"><div><div class="stat-top">STUDY PROGRESS</div><strong id="progressStat">0%</strong><small>Across your learning map</small></div><span>↗</span></div>
+    <div class="stat"><div><div class="stat-top">YOUR CURRENT GOAL</div><strong>Class 10</strong><small>CBSE learning path</small></div><span>✦</span></div>
+  </div>
+  <div class="section-head"><div><div class="eyebrow">PICK YOUR PLANET</div><h2>Explore your subjects</h2><p>Choose a subject to discover its chapters.</p></div><button class="text-btn" data-view="explorer">All subjects ↗</button></div>
+  <div class="subject-grid" id="dashboardSubjects"></div>
+  <div class="lower-grid">
+    <div class="panel"><h3>Continue your journey</h3><p class="panel-sub">Short lessons that help you pick up where you left off.</p><div class="chapter-list" id="continueList"></div></div>
+    <div class="panel"><h3>Notice board</h3><p class="panel-sub">Updates from your learning space.</p><div class="notice"><strong>📘 Study tip of the day</strong><p>After studying a topic, close your notes and write down what you remember.</p></div><div class="notice"><strong>🎯 Board preparation</strong><p>Practice questions after every chapter instead of saving everything for the end.</p></div><div class="notice"><strong>✨ Welcome to MindGalaxy</strong><p>This demo stores your chapter progress in this browser.</p></div></div>
+  </div>
+</section>
+<section class="view" id="view-explorer">
+  <div class="eyebrow">INTERACTIVE CURRICULUM</div><h1 class="page-title">Galaxy Explorer</h1><p class="page-intro">Pick a subject and travel through its learning map.</p>
+  <div class="filter-row"><select id="classFilter" aria-label="Select class"><option value="10">Class 10</option><option value="9">Class 9</option><option value="8">Class 8</option></select><select id="subjectFilter" aria-label="Filter subject"><option value="all">All subjects</option><option value="science">Science</option><option value="maths">Mathematics</option><option value="social">Social Science</option><option value="english">English</option><option value="hindi">Hindi</option><option value="ai">Artificial Intelligence</option></select></div>
+  <div class="subject-grid" id="explorerSubjects"></div>
+</section>
+<section class="view" id="view-lessons">
+  <div class="eyebrow">YOUR STUDY DESK</div><h1 class="page-title">Lessons & Notes</h1><p class="page-intro">Open a chapter for a short learning outline and mark it complete when you're done.</p>
+  <div class="filter-row"><select id="lessonFilter" aria-label="Select lesson subject"><option value="all">All subjects</option><option value="science">Science</option><option value="maths">Mathematics</option><option value="social">Social Science</option><option value="english">English</option><option value="hindi">Hindi</option><option value="ai">Artificial Intelligence</option></select></div>
+  <div class="chapter-list" id="lessonList"></div>
+</section>
+<section class="view" id="view-pyq">
+  <div class="eyebrow">BOARD PRACTICE</div><h1 class="page-title">Previous Year Questions</h1><p class="page-intro">Use this practice area to organise revision. The sample questions below are illustrative, not a verified PYQ archive.</p>
+  <div class="filter-row"><select id="pyqSubject" aria-label="Choose PYQ subject"><option value="science">Science</option><option value="maths">Mathematics</option><option value="social">Social Science</option><option value="english">English</option></select><select id="pyqYear" aria-label="Choose question set"><option value="sample">Sample practice set</option><option value="2025">2025 (add verified questions)</option><option value="2024">2024 (add verified questions)</option></select></div>
+  <div id="pyqContent" class="panel"></div>
+</section>
+<section class="view" id="view-aitutor">
+  <div class="eyebrow">STUDY COMPANION</div><h1 class="page-title">AI Study Buddy</h1><p class="page-intro">A ready-to-connect interface for an AI tutor. This standalone HTML demo does not call an AI service.</p>
+  <div class="panel"><h3>What are you stuck on?</h3><p class="panel-sub">Write a topic or question. The demo gives you a study-planning response; connect a secure backend to enable real AI tutoring.</p><textarea id="tutorQuestion" rows="4" style="width:100%;resize:vertical;background:#0b1020;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:14px" placeholder="Example: Explain chemical reactions in easy language…"></textarea><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="pill primary" id="askTutor">Help me study</button><button class="pill" id="clearTutor">Clear</button></div><div id="tutorAnswer" class="notice-box" style="display:none;margin-top:18px"></div></div>
+  <div class="notice-box">Security note: never put an AI API key in this HTML file. Call your own server endpoint, and keep the key on the server.</div>
+</section>
+<section class="view" id="view-progress">
+  <div class="eyebrow">YOUR ACHIEVEMENTS</div><h1 class="page-title">My Progress</h1><p class="page-intro">Your progress is saved locally in this browser on this device.</p>
+  <div class="stats"><div class="stat"><div><div class="stat-top">COMPLETED</div><strong id="progressCompleted">0</strong></div></div><div class="stat"><div><div class="stat-top">TOTAL CHAPTERS IN DEMO</div><strong id="totalChapters">0</strong></div></div><div class="stat"><div><div class="stat-top">COMPLETION</div><strong id="progressPercent">0%</strong></div></div></div>
+  <div class="panel" style="margin-top:18px"><h3>Subject breakdown</h3><p class="panel-sub">Mark chapters complete from the Lessons page to update this view.</p><div id="progressBreakdown"></div><button class="pill" id="resetProgress" style="margin-top:18px">Reset demo progress</button></div>
+</section>
+<section class="view" id="view-plans">
+  <div class="eyebrow">YOUR NEXT LEVEL</div><h1 class="page-title">Choose your learning plan</h1><p class="page-intro">Demo pricing for layout preview. Connect a payment provider before accepting real payments.</p>
+  <div class="plans">
+    <div class="plan"><h3>Explorer</h3><div class="price">₹0 <small>/ forever</small></div><ul><li>Subject and chapter explorer</li><li>Basic progress tracking</li><li>Sample practice questions</li></ul><button class="pill" data-view="dashboard">Current demo plan</button></div>
+    <div class="plan featured"><div class="eyebrow">STUDENT FAVOURITE</div><h3>Galaxy Plus</h3><div class="price">₹99 <small>/ month · sample price</small></div><ul><li>Expanded notes and quizzes</li><li>Personal revision planner</li><li>Premium learning tools</li></ul><button class="pill primary" id="subscribePlus">Choose Plus</button></div>
+    <div class="plan"><h3>Galaxy Pro</h3><div class="price">₹799 <small>/ year · sample price</small></div><ul><li>Everything in Plus</li><li>Advanced progress reports</li><li>Extra practice sets</li></ul><button class="pill" id="subscribePro">Choose Pro</button></div>
+  </div>
+  <div class="notice-box">Payment is not enabled in this prototype. Do not treat a button click or uploaded payment screenshot as proof of payment. A real version needs server-side payment verification and secure subscription checks.</div>
+</section>
+<section class="view" id="view-admin">
+  <div class="eyebrow">RESTRICTED AREA</div><h1 class="page-title">Admin access</h1><p class="page-intro">This screen is only a front-end placeholder. It is not a secure admin login.</p>
+  <div class="panel" style="max-width:480px"><label for="adminUser">Username</label><input id="adminUser" autocomplete="username" style="display:block;width:100%;margin:7px 0 14px;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0b1020;color:var(--text)"><label for="adminPass">Password</label><input id="adminPass" type="password" autocomplete="current-password" style="display:block;width:100%;margin:7px 0 14px;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0b1020;color:var(--text)"><button class="pill primary" id="adminLogin">Continue</button><p id="adminMessage" class="panel-sub" style="margin-top:14px">Connect a real server authentication system to enable admin functions.</p></div>
+</section>
+<div class="footer">MindGalaxy demo • Built for learning • Sample curriculum content — verify against your current board syllabus.</div>
+</main>
+</div>
+</div>
+<div class="modal-backdrop" id="chapterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal"><div class="modal-top"><div><div class="eyebrow" id="modalSubject">SUBJECT</div><h2 id="modalTitle">Chapter title</h2></div><button class="close" id="modalClose" aria-label="Close dialog">✕</button></div><div class="modal-content" id="modalContent"></div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><button class="pill primary" id="markComplete">Mark chapter complete ✓</button><button class="pill" id="modalOpenLessons">Open lessons</button></div></div>
+</div>
+<script>
+const subjects = [
+ {id:"science",name:"Science",icon:"⚛",desc:"Physics, chemistry & biology",color:"#9a8cff",chapters:[
+  ["Chemical Reactions and Equations","Chemistry · reactions, equations and balancing"],
+  ["Acids, Bases and Salts","Chemistry · indicators, pH and everyday salts"],
+  ["Metals and Non-metals","Chemistry · properties and reactions"],
+  ["Carbon and Its Compounds","Chemistry · bonding and functional groups"],
+  ["Light: Reflection and Refraction","Physics · ray diagrams and formulas"],
+  ["The Human Eye and the Colourful World","Physics · vision and optical phenomena"],
+  ["Life Processes","Biology · nutrition, respiration and transport"]]},
+ {id:"maths",name:"Mathematics",icon:"∑",desc:"Build concepts step by step",color:"#5dd6e8",chapters:[
+  ["Real Numbers","Euclid's division algorithm and prime factorisation"],
+  ["Polynomials","Zeros of polynomials and relationships"],
+  ["Pair of Linear Equations","Graphical and algebraic methods"],
+  ["Quadratic Equations","Roots and solving methods"],
+  ["Triangles","Similarity and important theorems"],
+  ["Introduction to Trigonometry","Ratios and identities"],
+  ["Circles","Tangents and their properties"]]},
+ {id:"social",name:"Social Science",icon:"🌐",desc:"History, geography, civics & economics",color:"#e8b56d",chapters:[
+  ["Nationalism in India","History · movements and key events"],
+  ["Resources and Development","Geography · resource planning"],
+  ["Power Sharing","Civics · forms and need for power sharing"],
+  ["Federalism","Civics · levels of government"],
+  ["Development","Economics · income and other goals"]]},
+ {id:"english",name:"English",icon:"✎",desc:"Literature, grammar & writing",color:"#7be0b0",chapters:[
+  ["A Letter to God","First Flight · faith, irony and character"],
+  ["Nelson Mandela: Long Walk to Freedom","First Flight · equality and freedom"],
+  ["Two Stories about Flying","First Flight · courage and fear"],
+  ["The Ball Poem","Poetry · loss and growing up"],
+  ["A Question of Trust","Footprints Without Feet · plot and inference"],
+  ["Modals and Subject–Verb Concord","Grammar · rules and practice"]]},
+ {id:"hindi",name:"Hindi",icon:"अ",desc:"पाठ, व्याकरण और लेखन",color:"#ed91c6",chapters:[
+  ["गद्य पाठ अभ्यास","पाठ का सार, प्रश्न और उत्तर"],
+  ["काव्य पाठ अभ्यास","भावार्थ, काव्य-सौंदर्य और प्रश्न"],
+  ["व्याकरण","व्याकरण के नियम और उदाहरण"],
+  ["लेखन कौशल","अनुच्छेद, पत्र और सूचना लेखन"]]},
+ {id:"ai",name:"Artificial Intelligence",icon:"✧",desc:"AI concepts, ethics & project cycle",color:"#a9b5ff",chapters:[
+  ["AI Project Cycle","Problem scoping, data, modelling and evaluation"],
+  ["AI Ethics","Bias, privacy, fairness and responsibility"],
+  ["Data Literacy","Data types, quality and interpretation"],
+  ["Model Evaluation","Confusion matrix, precision and F1 score"]]}
+];
+const stateKey="mindgalaxy-demo-progress-v1";
+let completed = new Set(JSON.parse(localStorage.getItem(stateKey)||"[]"));
+let currentChapter=null;
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const allChapters=()=>subjects.flatMap(s=>s.chapters.map((c,i)=>({subject:s,chapter:c,index:i,key:s.id+"-"+i})));
+function saveProgress(){localStorage.setItem(stateKey,JSON.stringify([...completed]));renderStats();renderProgress();renderContinue();}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function subjectCard(s){let items=allChapters().filter(x=>x.subject.id===s.id),done=items.filter(x=>completed.has(x.key)).length,pct=Math.round(done/items.length*100);return `<article class="subject" tabindex="0" role="button" data-subject="${s.id}" aria-label="Explore ${esc(s.name)}"><div class="subject-head"><span class="subject-icon">${s.icon}</span><span style="color:${s.color};font-size:12px">✦ LEARNING MAP</span></div><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p><div class="progress-row"><span>${done} of ${items.length} chapters</span><span>${pct}%</span></div><div class="progress"><span style="width:${pct}%;background:${s.color}"></span></div></article>`}
+function renderSubjects(){const search=($("#globalSearch").value||"").trim().toLowerCase();const classVal=$("#classFilter")?.value||"10";let list=subjects.filter(s=>(!$("#subjectFilter")||$("#subjectFilter").value==="all"||$("#subjectFilter").value===s.id)&&(!search||s.name.toLowerCase().includes(search)||s.chapters.some(c=>c[0].toLowerCase().includes(search))));$("#dashboardSubjects").innerHTML=subjects.filter(s=>!search||s.name.toLowerCase().includes(search)||s.chapters.some(c=>c[0].toLowerCase().includes(search))).map(subjectCard).join("")||'<div class="empty-state">No matching subjects. Try another search.</div>';$("#explorerSubjects").innerHTML=list.map(subjectCard).join("")||'<div class="empty-state">No matches. Try another filter.</div>';$$("[data-subject]").forEach(el=>{const open=()=>openSubject(el.dataset.subject);el.addEventListener("click",open);el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}})});}
+function renderLessonList(){const filter=$("#lessonFilter").value;const search=($("#globalSearch").value||"").trim().toLowerCase();const items=allChapters().filter(x=>(filter==="all"||x.subject.id===filter)&&(!search||x.chapter[0].toLowerCase().includes(search)||x.subject.name.toLowerCase().includes(search)));$("#lessonList").innerHTML=items.map(x=>`<div class="chapter"><div class="chapter-num">${x.index+1}</div><div class="chapter-info"><strong>${esc(x.chapter[0])}</strong><small>${esc(x.subject.name)} · ${completed.has(x.key)?"Completed":"Ready to study"}</small></div><button data-chapter="${x.key}">${completed.has(x.key)?"Review":"Open lesson"} →</button></div>`).join("")||'<div class="empty-state">No chapters match your search.</div>';$$("[data-chapter]").forEach(b=>b.addEventListener("click",()=>openChapter(b.dataset.chapter)));}
+function openSubject(id){$("#lessonFilter").value=id;showView("lessons");renderLessonList();}
+function openChapter(key){const x=allChapters().find(x=>x.key===key);if(!x)return;currentChapter=x;$("#modalSubject").textContent=x.subject.name.toUpperCase();$("#modalTitle").textContent=x.chapter[0];$("#modalContent").innerHTML=`<p><strong>Chapter overview</strong></p><p>${esc(x.chapter[1])}. Use this as a starting point, then add your complete notes, textbook references, diagrams and practice questions.</p><ul><li>Read the topic once and note unfamiliar words.</li><li>Write the key definitions, rules or formulas in your own words.</li><li>Try 3–5 practice questions without looking at the answers.</li><li>Review mistakes and revise the topic again later.</li></ul><div class="notice-box">Prototype content: this is a study outline, not a full textbook lesson. Add verified syllabus material before publishing.</div>`;$("#markComplete").textContent=completed.has(key)?"Completed ✓ (undo)":"Mark chapter complete ✓";$("#chapterModal").classList.add("open");}
+function closeModal(){$("#chapterModal").classList.remove("open")}
+function renderContinue(){const items=allChapters().filter(x=>!completed.has(x.key)).slice(0,3);$("#continueList").innerHTML=items.map(x=>`<div class="chapter"><div class="chapter-num">${x.subject.icon}</div><div class="chapter-info"><strong>${esc(x.chapter[0])}</strong><small>${esc(x.subject.name)} · Suggested next</small></div><button data-chapter="${x.key}">Open →</button></div>`).join("")||'<div class="empty-state">Amazing! You completed every sample chapter.</div>';$$('#continueList [data-chapter]').forEach(b=>b.addEventListener("click",()=>openChapter(b.dataset.chapter)));}
+function renderStats(){const total=allChapters().length,done=completed.size,pct=Math.round(done/total*100);$("#completedStat").textContent=done;$("#progressStat").textContent=pct+"%";$("#progressCompleted").textContent=done;$("#totalChapters").textContent=total;$("#progressPercent").textContent=pct+"%";}
+function renderProgress(){const total=allChapters().length;$("#progressBreakdown").innerHTML=subjects.map(s=>{const arr=allChapters().filter(x=>x.subject.id===s.id),done=arr.filter(x=>completed.has(x.key)).length,pct=Math.round(done/arr.length*100);return `<div style="margin:17px 0"><div class="progress-row"><span>${s.icon} ${esc(s.name)}</span><span>${done}/${arr.length} · ${pct}%</span></div><div class="progress"><span style="width:${pct}%;background:${s.color}"></span></div></div>`}).join("");}
+function renderPyq(){const subject=subjects.find(s=>s.id===$("#pyqSubject").value);const year=$("#pyqYear").value;if(year!=="sample"){$("#pyqContent").innerHTML=`<h3>${esc(subject.name)} · ${year}</h3><p class="panel-sub">Verified ${year} board questions have not been added to this demo yet.</p><div class="empty-state">Add only questions you have checked against an official paper or a reliable source. Then include the exam year, set, question number and answer key.</div>`;return;}const examples={science:[["Why is balancing a chemical equation necessary?","It follows the law of conservation of mass: the number of atoms of each element must be equal on both sides."],["What is the pH scale used for?","It indicates how acidic or basic an aqueous solution is."]],maths:[["If two triangles are similar, what can be said about their corresponding angles?","Their corresponding angles are equal, and their corresponding sides are in the same ratio."],["What is the zero of a polynomial?","A value of the variable for which the polynomial evaluates to zero."]],social:[["What is power sharing?","It is the distribution of power among different organs, levels or groups in a democracy."],["What is resource planning?","A process of identifying resources, evaluating them and planning their balanced use."]],english:[["How can you identify the central idea of a prose passage?","Look for the main message, supporting details and the way the ending connects to the opening."]]}[subject.id]||[];$("#pyqContent").innerHTML=`<h3>${esc(subject.name)} · Sample practice</h3><p class="panel-sub">Illustrative revision questions — not labelled as official past-year questions.</p>`+examples.map((q,i)=>`<details style="padding:14px 0;border-bottom:1px solid var(--line)"><summary style="cursor:pointer;font-weight:700">Q${i+1}. ${esc(q[0])}</summary><p style="color:var(--muted);font-size:13px;margin-bottom:0">${esc(q[1])}</p></details>`).join("");}
+function showView(name){if(name==="admin"){name="admin";} $$(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name));$$(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===name));$("#sidebar").classList.remove("open");if(name==="lessons")renderLessonList();if(name==="explorer")renderSubjects();if(name==="progress"){renderStats();renderProgress();}if(name==="pyq")renderPyq();window.scrollTo({top:0,behavior:"smooth"});}
+$$("[data-view]").forEach(el=>el.addEventListener("click",()=>showView(el.dataset.view)));
+$("#menuToggle").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+$("#globalSearch").addEventListener("input",()=>{renderSubjects();if($("#view-lessons").classList.contains("active"))renderLessonList()});
+$("#subjectFilter").addEventListener("change",renderSubjects);$("#classFilter").addEventListener("change",()=>{alert("This demo contains sample Class 10 chapters only. Add verified chapter data for other classes.");$("#classFilter").value="10";});
+$("#lessonFilter").addEventListener("change",renderLessonList);$("#pyqSubject").addEventListener("change",renderPyq);$("#pyqYear").addEventListener("change",renderPyq);
+$("#modalClose").addEventListener("click",closeModal);$("#chapterModal").addEventListener("click",e=>{if(e.target===$("#chapterModal"))closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+$("#markComplete").addEventListener("click",()=>{if(!currentChapter)return;if(completed.has(currentChapter.key))completed.delete(currentChapter.key);else completed.add(currentChapter.key);saveProgress();renderSubjects();renderLessonList();openChapter(currentChapter.key)});
+$("#modalOpenLessons").addEventListener("click",()=>{closeModal();showView("lessons")});
+$("#resetProgress").addEventListener("click",()=>{if(confirm("Reset all saved demo progress on this browser?")){completed.clear();saveProgress();renderSubjects();renderLessonList();}});
+$("#askTutor").addEventListener("click",()=>{const q=$("#tutorQuestion").value.trim();if(!q){$("#tutorAnswer").style.display="block";$("#tutorAnswer").textContent="Write a topic or question first, and I’ll help you organise a study plan.";return;}$("#tutorAnswer").style.display="block";$("#tutorAnswer").innerHTML=`<strong>Suggested study approach</strong><p>1. Break “${esc(q)}” into smaller ideas.</p><p>2. Read one idea and explain it in your own words.</p><p>3. Work through one example, then solve a similar question yourself.</p><p>4. Tell a connected AI backend to generate a personalised explanation, examples and a quiz for this topic.</p><small>This is a demo response, not a live AI-generated answer.</small>`;});
+$("#clearTutor").addEventListener("click",()=>{$("#tutorQuestion").value="";$("#tutorAnswer").style.display="none";});
+$("#subscribePlus").addEventListener("click",()=>alert("Demo only: no payment has been taken. Connect a payment provider and verify payment on your server before enabling premium access."));
+$("#subscribePro").addEventListener("click",()=>alert("Demo only: no payment has been taken. Connect a payment provider and verify payment on your server before enabling premium access."));
+$("#adminLogin").addEventListener("click",()=>{$("#adminMessage").textContent="Login is not connected. Add server-side authentication and role checks; never validate admin credentials only in browser JavaScript.";});
+$("#themeButton").addEventListener("click",()=>{const light=document.body.dataset.theme!=="light";document.body.dataset.theme=light?"light":"dark";if(light){document.documentElement.style.setProperty("--bg","#f3f5fb");document.documentElement.style.setProperty("--panel","#fff");document.documentElement.style.setProperty("--text","#172033");document.documentElement.style.setProperty("--muted","#59677d");document.documentElement.style.setProperty("--line","#d8deea");document.body.style.background="#f3f5fb";document.querySelector(".topbar").style.background="#f3f5fbed";}else{location.reload();}});
+renderSubjects();renderLessonList();renderContinue();renderStats();renderProgress();renderPyq();
+</script>
+</body>
+</html>
